@@ -4,8 +4,14 @@ var websPort = 80;
 
 //pigpio
 var Gpio = require("pigpio").Gpio;
+
+//red-led
 var led1 = new Gpio(22, { mode: Gpio.OUTPUT });
+
+//green-led
 var led2 = new Gpio(17, { mode: Gpio.OUTPUT });
+
+//blue-led
 var led3 = new Gpio(24, { mode: Gpio.OUTPUT });
 
 
@@ -71,11 +77,11 @@ ws.id = getRandomInt(50);
 		}
 		else
 		{
-			//console.log("Smaller than 0 or bigger than 255")
+			console.log("Smaller than 0 or bigger than 255")
 		}
 	}
 	else{
-		//console.log("Something isn't a integer...feelsbadman")
+		console.log("Something isn't a integer...feelsbadman")
 	}
 
   });

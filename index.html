@@ -1,27 +1,112 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Websocket</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<link rel="icon" type="image/jpg" href="/fav.jpg">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <title>LED Controller</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+<style>/*!
+ * Start Bootstrap - 1 Col Portfolio (https://startbootstrap.com/template-overviews/1-col-portfolio)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-1-col-portfolio/blob/master/LICENSE)
+ */
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.pagination {
+  margin-bottom: 15px;
+}
+</style>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">LED Controller</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Platzhalter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+
 
 <h1 id="conninf">WebSocket</h1>
-<div class="messages"></div>
-<div id="frm">
+   
+   <div id="frm">
 <form action="javascript:void(0)">
-<label for="message">&gt</label>
-<input class="jscolor {onFineChange:'update(this)'}" value="ffcc00">
+<label for="message"></label>
+<input readonly="true" class="jscolor {onFineChange:'update(this)'}" value="fff">
 
 <input type="text" id="message1" required="autofocus" />
 <input type="text" id="message2" required="autofocus"/>
 <input type="text" id="message3" required="autofocus" />
-<input type="submit" id="mainform_submit" value="SubmitLad"/>
+<input type="submit" id="mainform_submit" value="Submit"/>
 </form>
 </div>
+   </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+     
+      <hr>
 
-<script src="jscolor.js"></script>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer 
+  <!--  <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white"></p>
+      </div>
+      <!-- /.container -->
+    </footer>-->
+
+	<script src="jscolor.js"></script>
 <script src="ws-client.js"></script>
 <script>function update(picker) 
 {
@@ -37,9 +122,12 @@ test2.value = Math.round(picker.rgb[2]);
 pSend(test,test1,test2);
 }
 </script>
+	
+	
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
 
-
-
-</body>
+  </body>
 
 </html>

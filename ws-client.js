@@ -3,7 +3,7 @@
  var val = [0,0,0];
  
   ws.onopen= function(){
-	 setTitle("Connection est.");
+	 setTitle("Connected to Server");
 
  };
  
@@ -51,17 +51,17 @@
 	val[1] = parseInt(input2.value);
 	val[2] = parseInt(input3.value);
 	
-	if(val[0].isNaN ||val[1].isNaN ||val[2].isNaN )
-	{
-	  notInt();
-	}
-	else
+	if(!(val[0].isNaN ||val[1].isNaN ||val[2].isNaN ))
 	{
 	 var obj = {"r":val[0],"g":val[1],"b":val[2]};
 
-	 //client-side send
+	//client-side send
 	// ws.send(input.value);
 	 ws.send(JSON.stringify(obj));
+	}
+	else
+	{
+
 	 }
  };
  
@@ -71,6 +71,7 @@
 	// document.querySelector('h1').innerHTML = title; 
  }
  
+//not necessary;create div in html with class messages to display
  function printMessage(message){
 	 var p = document.createElement('p');
 	 p.innerText = message;
@@ -78,13 +79,8 @@
 	 
  }
  
- function notInt()
- {
-	 alert("");
-	 
- }
  
- //connection close fix
+ //connection close fix;necessary to prevent errors - still works without
  window.onbeforeunload = function() {
     ws.onclose = function () {}; // disable onclose handler first
     ws.close()
