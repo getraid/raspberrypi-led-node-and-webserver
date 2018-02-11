@@ -1,5 +1,6 @@
- var ws = new WebSocket("ws://192.168.178.42:3000");
-// var ws = new WebSocket("ws://localhost:3000");
+var ip = location.host;
+var ws = new WebSocket("ws://"+ip+":3000");
+
  var val = [0,0,0];
  
   ws.onopen= function(){
@@ -47,22 +48,8 @@
 	 var input2 = document.getElementById('message2');
 	 var input3 = document.getElementById('message3');
 	
-	val[0] = parseInt(input1.value);
-	val[1] = parseInt(input2.value);
-	val[2] = parseInt(input3.value);
-	
-	if(!(val[0].isNaN ||val[1].isNaN ||val[2].isNaN ))
-	{
-	 var obj = {"r":val[0],"g":val[1],"b":val[2]};
+pSend(input1,input2 ,input3 );
 
-	//client-side send
-	// ws.send(input.value);
-	 ws.send(JSON.stringify(obj));
-	}
-	else
-	{
-
-	 }
  };
  
  function setTitle(title){
