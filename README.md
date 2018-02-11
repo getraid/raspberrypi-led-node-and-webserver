@@ -5,7 +5,8 @@ Also useable, with for example C#, to write applications that send the data via 
 ## Showcase:
 Youtube:<br>
 [![youtube showcase](https://img.youtube.com/vi/o8wPmeHrHuY/0.jpg)](https://www.youtube.com/watch?v=o8wPmeHrHuY)
-![](https://i.imgur.com/upRAnYN.jpg)
+![outside picture](https://i.imgur.com/upRAnYN.jpg)
+![website screenshot](https://i.imgur.com/Y2gUril.png)
 
 ## Requirements:
 * Raspberry Pi 1 model B (tested) up to Raspberry Pi 3 Model B
