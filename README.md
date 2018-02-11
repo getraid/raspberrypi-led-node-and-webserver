@@ -1,9 +1,11 @@
 # Raspberry Pi LED-stripe controller with Node running a Webserver
 Control LED stripes through your Webbrowser via Websockets from the Pi. 
-Also useable with for example C#, to write applications that send the data via websockets: [possible idea](http://www.screenbloom.com/) or to sync it via Logitech-Software via API.
+Also useable, with for example C#, to write applications that send the data via websockets: [possible idea](http://www.screenbloom.com/) or to sync it via Logitech-Software via API.
 
 ## Showcase:
-* to be filled
+Youtube:<br>
+[![youtube showcase](https://img.youtube.com/vi/o8wPmeHrHuY/0.jpg)](https://www.youtube.com/watch?v=o8wPmeHrHuY)
+![](https://i.imgur.com/upRAnYN.jpg)
 
 ## Requirements:
 * Raspberry Pi 1 model B (tested) up to Raspberry Pi 3 Model B
