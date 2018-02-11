@@ -44,3 +44,5 @@ You effectively need to change the **thick** written parts, because they are dep
 If you get errors, maybe you need to install pigpio: `sudo apt-get install pigpio`.
 \* 7 - Is not necessary anymore, change it if you encounter errors.
 
+## Sidenote:
+You'll see the count of users connected in the console, as well as a client number. This number doesn't have a meaning or anything else, it is just a random number, to quickly differenciate which user send what. (for the lulz)
