@@ -65,31 +65,40 @@
 <input type="text" id="message1" required="autofocus" />
 <input type="text" id="message2" required="autofocus"/>
 <input type="text" id="message3" required="autofocus" />
-<input type="submit" id="mainform_submit" value="Submit"/>
+<input type="submit" id="mainform_submit" value="Submit"/><hr>
+<input type="button" id="sendBlack" value="Turn off"/>
+<input style="color:grey;" type="button" id="sendWhite" value="White"/>
+
+<input style="color:red;" type="button" id="sendRed" value="Red"/>
+<input style="color:Green;" type="button" id="sendGreen" value="Green"/>
+<input style="color:Blue;" type="button" id="sendBlue" value="Blue"/>
+<span style='color:red;margin-right:1.25em; display:inline-block;'>&nbsp;</span>
+<input style="color:#89cff0;" type="button" id="sendBBlue" value="Baby Blue"/>
+<input style="color:#FFA500;" type="button" id="sendYellow" value="Yellow"/>
+<input style="color:purple;" type="button" id="sendPurple" value="Purple"/>
+
 </form>
 </div>
    </div>
         <div class="col-sm-1"></div>
     </div>
 </div>
-     
-      <hr>
-
-
-    </div>
-    <!-- /.container -->
-
-    <!-- Footer 
-  <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white"></p>
-      </div>
-     
-    </footer>-->
-
-	<script src="js/jscolor.js"></script>
+</div>
+<script src="js/jscolor.js"></script>
 <script src="ws-client.js"></script>
-<script>function update(picker) 
+<script>
+
+document.getElementById("sendBlack").onclick = sendBlack;
+document.getElementById("sendRed").onclick = sendRed;
+document.getElementById("sendBlue").onclick = sendBlue;
+document.getElementById("sendGreen").onclick = sendGreen;
+document.getElementById("sendWhite").onclick = sendWhite;
+document.getElementById("sendBBlue").onclick = sendBBlue;
+document.getElementById("sendYellow").onclick = sendYellow;
+document.getElementById("sendPurple").onclick = sendPurple;
+
+
+function update(picker) 
 {
 var test = document.getElementById('message1');
 test.value = Math.round(picker.rgb[0]);
@@ -99,9 +108,11 @@ test1.value = Math.round(picker.rgb[1]);
 
 var test2 = document.getElementById('message3');
 test2.value = Math.round(picker.rgb[2]);
-
 pSend(test,test1,test2);
+
 }
+
+
 </script>
 	
 	
