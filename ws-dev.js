@@ -73,7 +73,7 @@ ws.id = getRandomInt(50);
 		led2.pwmWrite(obj.g);
 		led3.pwmWrite(obj.b);
 
-		// console.log("Client " + ws.id + ": " + obj.r +", "+ obj.g +", "+ obj.b);
+		 console.log("Client " + ws.id + ": " + obj.r +", "+ obj.g +", "+ obj.b);
 		}
 		else
 		{
