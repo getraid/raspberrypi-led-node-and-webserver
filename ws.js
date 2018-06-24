@@ -6,13 +6,13 @@ var websPort = 80;
 var Gpio = require("pigpio").Gpio;
 
 //red-led
-var led1 = new Gpio(22, { mode: Gpio.OUTPUT });
+var led1 = new Gpio(27, { mode: Gpio.OUTPUT });
 
 //green-led
-var led2 = new Gpio(17, { mode: Gpio.OUTPUT });
+var led2 = new Gpio(22, { mode: Gpio.OUTPUT });
 
 //blue-led
-var led3 = new Gpio(24, { mode: Gpio.OUTPUT });
+var led3 = new Gpio(17, { mode: Gpio.OUTPUT });
 
 
 
