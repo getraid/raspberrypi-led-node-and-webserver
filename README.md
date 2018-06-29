@@ -20,7 +20,8 @@ You effectively need to change the **thick** written parts, because they are dep
 ### Automated
 1. SSH into your Pi via [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) on Windows or the Terminal on Linux / macOs (`ssh pi@your-pi-local-ip-adress:22`)
 2. type in these commands, this will automate the installation.
-```wget http://git.getraid.com/raspberrypi-led-node-and-webserver/script.sh
+```
+wget http://git.getraid.com/raspberrypi-led-node-and-webserver/script.sh
 chmod +x script.sh
 sudo sh script.sh
 ```
