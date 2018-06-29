@@ -17,10 +17,17 @@ Youtube:<br>
 
 ## Setup:
 You effectively need to change the **thick** written parts, because they are depending on your setup (GPIO)
-
+### Automated
+1. SSH into your Pi via [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) on Windows or the Terminal on Linux / macOs (`ssh pi@your-pi-local-ip-adress:22`)
+2. type in these commands, this will automate the installation.
+```wget http://git.getraid.com/raspberrypi-led-node-and-webserver/script.sh
+chmod +x script.sh
+sudo sh script.sh
+```
+### Manual
 1. SSH into your Pi via [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) on Windows or the Terminal on Linux / macOs (`ssh pi@your-pi-local-ip-adress:22`)
 2. To update the PI and the repositories itself -> `sudo apt-get update && upgrade --y`
-3. Install Node.js shown [here](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) (I had Node 6.11.4 on my pi)
+3. Install Node.js shown [here](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) (I had Node 6.11.4 on my pi) or [here(german)](https://stefanreimers.wordpress.com/2017/03/18/node-js-auf-dem-raspberry-pi-zero-w/)
 4. Clone this repo to your pi `git clone https://github.com/getraid/raspberrypi-led-node-and-webserver`
 5. Go into the folder `cd raspberrypi-led-node-and-webserver`
 6. **Change the RGB pins to the ones that you connected** `nano ws.js`
@@ -31,20 +38,22 @@ You effectively need to change the **thick** written parts, because they are dep
 7. \* (Change the IP where the websocketserver lies to your Pi's ip `nano ws-client.js`)
   * ` var ws = new WebSocket("ws://your-pi-local-ip-adress:3000");`
   * to save changes: *CTRL + X -> Y -> Enter*
-8. Run the script: `sudo node ws` (sudo necessary because of GPIO access and port 80)
-9. Open your Webbrowser and enter the IP adress of your pi in the url bar. For example: `http://192.168.178.42/`
-10. If the title of the page says *Connected to Server* then you can click on the field with the "FFFFFF" and drag the color slider around.
+8. Install pigpio `sudo apt-get install pigpio -y`
+9. Update all dependecies: `npm install` 
+10. Run the script: `sudo node ws-dev.js` (sudo necessary because of GPIO access and port 80)
+10.1 If further down no problems occur, you can launch `sudo node ws.js` instead. Ws-dev just shows more log data.
+11. Open your Webbrowser and enter the IP adress of your pi in the url bar. For example: `http://192.168.178.42/`
+12. If the title of the page says *Connected to Server* then you can click on the field with the "FFFFFF" and drag the color slider around.
   * Else check the console of the Pi. Maybe your port is blocked or there is a GPIO error.
   * Used Ports: 80 (webserver) & 3000 (websocketserver)
-11. Install tmux to run the script in the background `sudo apt-get install tmux`
+13. Install tmux to run the script in the background `sudo apt-get install tmux`
   * `tmux`
-  * `node ws`
+  * `sudo node ws`
   * *CTRL + B and then press d*
   * You can now close the terminal. To re-enter the tmux session, type `tmux a` 
-12. Enjoy your LED-Stripe webcontroller from any device in your local area network
+14. Enjoy your LED-Stripe webcontroller from any device in your local area network
   * It is also possible to start this script running with tmux on the startup of the system -> rc.local. 
   
-If you get errors, maybe you need to install pigpio: `sudo apt-get install pigpio`.
 \* 7 - Is not necessary anymore, change it if you encounter errors.
 
 ## Sidenote:
