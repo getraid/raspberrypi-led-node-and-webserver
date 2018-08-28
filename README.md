@@ -9,14 +9,20 @@ Youtube:<br>
 ![website screenshot](https://i.imgur.com/Y2gUril.png)
 
 ## Requirements:
-* Raspberry Pi 1 model B (tested) up to Raspberry Pi 3 Model B
+* Raspberry Pi 1 model B up to Raspberry Pi 3 Model B (tested everything but Pi 1a, Pi2 and Pi3b)
 * Noobs or Rasbian (tested)
-* 1 LED stripe with RGB connected on RPi GPIO pins (can be changed at Setup: 6): red: gpio17, green: gpio22, blue: gpio24 (raspberry pi 1b)
+* 1 LED stripe with RGB connected on RPi GPIO pins (can be changed at manual setup: 6): red: gpio27, green: gpio17, blue: gpio22 (raspberry pi zero w)
 * A local network (to reach the pi) and the IP adress of the PI
 * A PC with open port 22, to ssh/connect to the pi.
 
+## Standard Pinout
+* red: gpio pin **27** / pincount 11
+* green: gpio pin **17** / pincount 13
+* blue: gpio pin **22** / pincount 15
+* ground: gpio pin **4** / pincount 7
+
 ## Setup:
-You effectively need to change the **thick** written parts, because they are depending on your setup (GPIO)
+
 ### Automated
 1. SSH into your Pi via [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) on Windows or the Terminal on Linux / macOs (`ssh pi@your-pi-local-ip-adress:22`)
 2. type in these commands, this will automate the installation.
@@ -26,6 +32,8 @@ chmod +x script.sh
 sudo sh script.sh
 ```
 ### Manual
+You effectively need to change the **thick** written parts, because they are depending on your setup (GPIO)
+
 1. SSH into your Pi via [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) on Windows or the Terminal on Linux / macOs (`ssh pi@your-pi-local-ip-adress:22`)
 2. To update the PI and the repositories itself -> `sudo apt-get update && upgrade --y`
 3. Install Node.js shown [here](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions) (I had Node 6.11.4 on my pi) or [here(german)](https://stefanreimers.wordpress.com/2017/03/18/node-js-auf-dem-raspberry-pi-zero-w/)
