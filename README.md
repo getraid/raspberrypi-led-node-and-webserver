@@ -29,7 +29,7 @@ Youtube:<br>
 ```
 wget http://git.getraid.com/raspberrypi-led-node-and-webserver/script.sh
 chmod +x script.sh
-sudo sh script.sh
+sh script.sh
 ```
 ### Manual
 You effectively need to change the **thick** written parts, because they are depending on your setup (GPIO)
