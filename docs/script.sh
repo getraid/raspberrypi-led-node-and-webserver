@@ -12,12 +12,11 @@ cd ..
 rm node-v9.11.2-linux-armv6l.tar.gz
 rm -rf node-v9.11.2-linux-armv6l
 git clone https://github.com/getraid/raspberrypi-led-node-and-webserver /home/pi/raspberrypi-led-node-and-webserver
-cd raspberrypi-led-node-and-webserver
+cd /home/pi/raspberrypi-led-node-and-webserver
 npm install 
 Cy='\033[1;36m'
 RED='\033[0;35m'
 NC='\033[0m' # No Color
-cd raspberrypi-led-node-and-webserver
 clear
 echo Installation complete.
 echo -------------------------------------------------------------------
