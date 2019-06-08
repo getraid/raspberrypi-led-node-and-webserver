@@ -11,9 +11,7 @@ sudo cp -R * /usr/local/
 cd ..
 rm node-v9.11.2-linux-armv6l.tar.gz
 rm -rf node-v9.11.2-linux-armv6l
-su pi
-cd
-git clone https://github.com/getraid/raspberrypi-led-node-and-webserver
+git clone https://github.com/getraid/raspberrypi-led-node-and-webserver /home/pi/raspberrypi-led-node-and-webserver
 cd raspberrypi-led-node-and-webserver
 npm install 
 Cy='\033[1;36m'
@@ -23,8 +21,7 @@ cd raspberrypi-led-node-and-webserver
 clear
 echo Installation complete.
 echo -------------------------------------------------------------------
-echo To start, type in ${Cy}tmux${NC} and then ${Cy}cd raspberrypi-led-node-and-webserver${NC} 
-echo then start it with ${Cy} sudo node ws.js ${NC}
+echo To start, type in ${Cy}tmux${NC} and then ${Cy}sudo node ws.js ${NC}
 echo To run continued in background press ${RED} CTRL + b ${NC} and then ${RED} d ${NC} and close the window/session
 echo To re-enter the tmux-session type ${Cy}tmux a${NC}
 echo To exit ${RED} CTRL + c ${NC} and type ${Cy} exit ${NC}
