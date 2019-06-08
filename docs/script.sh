@@ -2,7 +2,9 @@ sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install tmux
 sudo apt-get install pigpio
+sudo apt-get install git
 cd 
+git clone https://github.com/getraid/raspberrypi-led-node-and-webserver
 wget https://nodejs.org/dist/latest-v9.x/node-v9.11.2-linux-armv6l.tar.gz
 tar -xvf node-v9.11.2-linux-armv6l.tar.gz
 cd node-v9.11.2-linux-armv6l
@@ -20,7 +22,7 @@ cd raspberrypi-led-node-and-webserver
 clear
 echo Installation complete.
 echo -------------------------------------------------------------------
-echo To start, type in ${Cy}tmux${NC} and then ${Cy}sudo node ws.js ${NC}
+echo To start, type in ${Cy}tmux${NC} and then ${Cy}cd raspberrypi-led-node-and-webserver${NC} then  ${Cy} sudo node ws.js ${NC}
 echo To run continued in background press ${RED} CTRL + b ${NC} and then ${RED} d ${NC} and close the window/session
 echo To re-enter the tmux-session type ${Cy}tmux a${NC}
 echo To exit ${RED} CTRL + c ${NC} and type ${Cy} exit ${NC}
