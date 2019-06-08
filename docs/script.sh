@@ -11,6 +11,7 @@ sudo cp -R * /usr/local/
 cd ..
 rm node-v9.11.2-linux-armv6l.tar.gz
 rm -rf node-v9.11.2-linux-armv6l
+cd
 git clone https://github.com/getraid/raspberrypi-led-node-and-webserver
 cd raspberrypi-led-node-and-webserver
 npm install 
