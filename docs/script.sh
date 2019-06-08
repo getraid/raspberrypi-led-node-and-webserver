@@ -22,7 +22,8 @@ cd raspberrypi-led-node-and-webserver
 clear
 echo Installation complete.
 echo -------------------------------------------------------------------
-echo To start, type in ${Cy}tmux${NC} and then ${Cy}cd raspberrypi-led-node-and-webserver${NC} then  ${Cy} sudo node ws.js ${NC}
+echo To start, type in ${Cy}tmux${NC} and then ${Cy}cd raspberrypi-led-node-and-webserver${NC} 
+echo then  only once ${Cy}npm install ${NC} and start it with ${Cy} sudo node ws.js ${NC}
 echo To run continued in background press ${RED} CTRL + b ${NC} and then ${RED} d ${NC} and close the window/session
 echo To re-enter the tmux-session type ${Cy}tmux a${NC}
 echo To exit ${RED} CTRL + c ${NC} and type ${Cy} exit ${NC}
