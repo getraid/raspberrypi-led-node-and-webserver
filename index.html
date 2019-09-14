@@ -1,125 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-<link rel="icon" type="image/jpg" href="fav/fav.jpg">
-<link rel="shortcut icon" href="fav/favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon" sizes="152x152" href="fav/apple-touch-icon-152x152.png" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" type="image/jpg" href="fav/fav.jpg" />
+    <link rel="shortcut icon" href="fav/favicon.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="fav/apple-touch-icon-152x152.png"
+    />
     <title>LED Controller</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
   </head>
 
   <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="/">LED Controller</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Platzhalter</a>
-            </li>
-          </ul>
-        </div>
       </div>
     </nav>
 
     <!-- Page Content -->
     <div class="container">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h1 id="conninf">WebSocket</h1>
+            <br />
+            <div id="frm">
+              <form action="javascript:void(0)">
+                <div class="container">
+                  <div class="row">
+                    <label for="message"></label>
+                    <div class="col-sm-4">
+                      <input
+                        readonly="true"
+                        class="form-control jscolor {onFineChange:'update(this)'}"
+                        value="fff"
+                        style="margin:  0.4em 0;"
+                      />
+                      <span
+                        style="color:red;margin-right:1.25em; display:inline-block;"
+                        >&nbsp;</span
+                      >
+                    </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12"></div>
+                    <div class="col-sm-2">
+                      <input
+                        class="form-control"
+                        type="text"
+                        id="message1"
+                        required="autofocus"
+                        style="margin:  0.4em 0;"
+                      />
+                    </div>
+                    <div class="col-sm-2">
+                      <input
+                        class="form-control"
+                        type="text"
+                        id="message2"
+                        required="autofocus"
+                        style="margin:  0.4em 0;"
+                      />
+                    </div>
+                    <div class="col-sm-2">
+                      <input
+                        class="form-control"
+                        type="text"
+                        id="message3"
+                        required="autofocus"
+                        style="margin:  0.4em 0;"
+                      />
+                    </div>
+
+                    <div class="col-sm-2">
+                      <button
+                        type="submit"
+                        id="mainform_submit"
+                        value="Submit"
+                        class="btn btn-outline-dark  btn-block"
+                        style="margin:  0.4em 0;"
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <hr style="visibility: hidden" />
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <button
+                        type="button"
+                        id="sendBlack"
+                        class="btn btn-secondary btn-block"
+                        value="Turn off"
+                        style="margin:  0.4em 0; padding-right: -0.2em;"
+                      >
+                        OFF
+                      </button>
+                    </div>
+                    <div class="col-sm-3">
+                      <button
+                        type="button"
+                        id="sendWhite"
+                        class="btn btn-outline-dark btn-block"
+                        value="White"
+                        style="margin:  0.4em 0;"
+                      >
+                        ON
+                      </button>
+                    </div>
+
+                    <div class="col-sm-3">
+                      <div
+                        class="btn-group btn-block"
+                        role="group"
+                        aria-label="Basic example"
+                      >
+                        <button
+                          type="button"
+                          id="sendRed"
+                          value="Red"
+                          class="btn btn-danger btn-block"
+                          style="margin:  0.4em 0;"
+                        >
+                          Red
+                        </button>
+
+                        <button
+                          type="button"
+                          id="sendGreen"
+                          class="btn btn-success btn-block"
+                          value="Green"
+                          style="margin:  0.4em 0;"
+                        >
+                          Green
+                        </button>
+                        <button
+                          type="button"
+                          id="sendBlue"
+                          class="btn btn-primary btn-block"
+                          value="Blue"
+                          style="margin:  0.4em 0;"
+                        >
+                          Blue
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div
+                        class="btn-group btn-block"
+                        role="group"
+                        aria-label="Basic example"
+                      >
+                        <button
+                          type="button"
+                          id="sendBBlue"
+                          class="btn btn-outline-info btn-block"
+                          value="Baby Blue"
+                          style="margin:  0.4em 0;"
+                        >
+                          BabyBlue
+                        </button>
+                        <button
+                          type="button"
+                          id="sendYellow"
+                          class="btn btn-outline-warning btn-block"
+                          value="Yellow"
+                          style="margin:  0.4em 0;"
+                        >
+                          Yellow
+                        </button>
+                        <button
+                          type="button"
+                          id="sendPurple"
+                          class="btn btn-outline-info btn-block"
+                          value="Purple"
+                          style="color:purple;border-color: purple;margin:  0.4em 0"
+                        >
+                          Purple
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <style>
+                  #sendPurple:hover {
+                    color: white !important;
+                    background-color: purple;
+                  }
+                </style>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row" style="margin-top: 10em">
+        <div class="col-sm-4" style="margin:  0.4em 0;">
+          <button type="button" class="btn btn-primary btn-lg btn-block">
+            Block level button
+          </button>
+        </div>
+        <div class="col-sm-4" style="margin:  0.4em 0;">
+          <button type="button" class="btn btn-primary btn-lg btn-block">
+            Block level button
+          </button>
+        </div>
+        <div class="col-sm-4" style="margin:  0.4em 0;">
+          <button type="button" class="btn btn-primary btn-lg btn-block">
+            Block level button
+          </button>
+        </div>
+      </div> -->
     </div>
-    <div class="row">
-        <div class="col-sm-12"></div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
 
+    <script src="js/jscolor.js"></script>
+    <script src="ws-client.js"></script>
+    <script>
+      document.getElementById("sendBlack").onclick = sendBlack;
+      document.getElementById("sendRed").onclick = sendRed;
+      document.getElementById("sendBlue").onclick = sendBlue;
+      document.getElementById("sendGreen").onclick = sendGreen;
+      document.getElementById("sendWhite").onclick = sendWhite;
+      document.getElementById("sendBBlue").onclick = sendBBlue;
+      document.getElementById("sendYellow").onclick = sendYellow;
+      document.getElementById("sendPurple").onclick = sendPurple;
 
-<h1 id="conninf">WebSocket</h1>
-   
-   <div id="frm">
-<form action="javascript:void(0)">
-<label for="message"></label>
-<input readonly="true" class="jscolor {onFineChange:'update(this)'}" value="fff">
+      function update(picker) {
+        var test = document.getElementById("message1");
+        test.value = Math.round(picker.rgb[0]);
 
-<input type="text" id="message1" required="autofocus" />
-<input type="text" id="message2" required="autofocus"/>
-<input type="text" id="message3" required="autofocus" />
-<input type="submit" id="mainform_submit" value="Submit"/><hr>
-<input type="button" id="sendBlack" value="Turn off"/>
-<input style="color:grey;" type="button" id="sendWhite" value="White"/>
+        var test1 = document.getElementById("message2");
+        test1.value = Math.round(picker.rgb[1]);
 
-<input style="color:red;" type="button" id="sendRed" value="Red"/>
-<input style="color:Green;" type="button" id="sendGreen" value="Green"/>
-<input style="color:Blue;" type="button" id="sendBlue" value="Blue"/>
-<span style='color:red;margin-right:1.25em; display:inline-block;'>&nbsp;</span>
-<input style="color:#89cff0;" type="button" id="sendBBlue" value="Baby Blue"/>
-<input style="color:#FFA500;" type="button" id="sendYellow" value="Yellow"/>
-<input style="color:purple;" type="button" id="sendPurple" value="Purple"/>
+        var test2 = document.getElementById("message3");
+        test2.value = Math.round(picker.rgb[2]);
+        pSend(test, test1, test2);
+      }
+    </script>
 
-</form>
-</div>
-   </div>
-        <div class="col-sm-1"></div>
-    </div>
-</div>
-</div>
-<script src="js/jscolor.js"></script>
-<script src="ws-client.js"></script>
-<script>
-
-document.getElementById("sendBlack").onclick = sendBlack;
-document.getElementById("sendRed").onclick = sendRed;
-document.getElementById("sendBlue").onclick = sendBlue;
-document.getElementById("sendGreen").onclick = sendGreen;
-document.getElementById("sendWhite").onclick = sendWhite;
-document.getElementById("sendBBlue").onclick = sendBBlue;
-document.getElementById("sendYellow").onclick = sendYellow;
-document.getElementById("sendPurple").onclick = sendPurple;
-
-
-function update(picker) 
-{
-var test = document.getElementById('message1');
-test.value = Math.round(picker.rgb[0]);
-
-var test1 = document.getElementById('message2');
-test1.value = Math.round(picker.rgb[1]);
-
-var test2 = document.getElementById('message3');
-test2.value = Math.round(picker.rgb[2]);
-pSend(test,test1,test2);
-
-}
-
-
-</script>
-	
-	
     <!-- Bootstrap core JavaScript -->
 
     <script src="js/bootstrap.bundle.min.js"></script>
-
   </body>
-
 </html>
