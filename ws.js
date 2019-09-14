@@ -3,7 +3,7 @@ var wssPort = 3000;
 var websPort = 80;
 
 //pigpio
-var Gpio = require("pigpio-mock").Gpio;
+var Gpio = require("pigpio").Gpio;
 
 //red-led
 var led1 = new Gpio(27, {
