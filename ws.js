@@ -8,7 +8,7 @@ if (fs.existsSync("config.ini")) {
   // no config file found, generate defaults
   config.addSection("Config");
   config.set("Config", "LED_GPIO_PIN_RED", 27);
-  config.set("Config", "LED_GPIO_PIN_RED", 22);
+  config.set("Config", "LED_GPIO_PIN_GREEN", 22);
   config.set("Config", "LED_GPIO_PIN_BLUE", 17);
   config.set("Config", "VerboseLogging", false);
   config.set("Config", "DebugWithoutGPIO", false);
