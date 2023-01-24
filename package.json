@@ -2,14 +2,14 @@
   "name": "rpinodeserver",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "ws.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-   "express": "^4.16.2",
+    "express": "^4.16.2",
     "pigpio": "^1.1.0",
     "pigpio-mock": "0.0.1",
     "ws": "^4.0.0"
