@@ -4,11 +4,13 @@
   "description": "",
   "main": "ws.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ledserver": "node ws.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "configparser": "^0.3.10",
     "express": "^4.16.2",
     "pigpio": "^1.1.0",
     "pigpio-mock": "0.0.1",
