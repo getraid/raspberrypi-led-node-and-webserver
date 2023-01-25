@@ -40,7 +40,7 @@
                     <label for="message"></label>
                     <div class="col-sm-4">
                       <input
-                        readonly="true"
+                        readonly="false"
                         class="form-control jscolor {onFineChange:'update(this)'}"
                         value="fff"
                         style="margin: 0.4em 0"
@@ -211,6 +211,8 @@
       document.getElementById("sendPurple").onclick = sendPurple;
 
       function update(picker) {
+        document.picker = picker;
+
         var test = document.getElementById("message1");
         test.value = Math.round(picker.rgb[0]);
 

@@ -94,7 +94,10 @@ wss.on("connection", function connection(ws) {
           led2.pwmWrite(obj.g);
           led3.pwmWrite(obj.b);
         }
-
+        //broadcast to all clients (debug)
+        CLIENTS.forEach((element) => {
+          element.send(JSON.stringify(obj));
+        });
         if (GetVerbooseLoggingEnabled()) {
           console.log("Client " + ws.id + ": " + obj.r + ", " + obj.g + ", " + obj.b);
         }

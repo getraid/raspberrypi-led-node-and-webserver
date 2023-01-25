@@ -14,7 +14,7 @@ ws.onclose = function () {
   }, 3000);
 };
 ws.onmessage = function (payload) {
-  printMessage(payload.data);
+  printMessage(payload);
 };
 
 function pSend(r, g, b) {
@@ -49,11 +49,12 @@ function setTitle(title) {
   notify.innerHTML = title;
 }
 
-//not necessary;create div in html with class messages to display
 function printMessage(message) {
-  var p = document.createElement("p");
-  p.innerText = message;
-  document.querySelector("div.messages").appendChild(p);
+  var msgdata = JSON.parse(message.data);
+  var picker = document.picker;
+  // click first into color picker on website, THEN it will refresh
+  // and show colors from other clients
+  picker.fromRGB(msgdata.r, msgdata.g, msgdata.b, true);
 }
 
 //connection close fix;necessary to prevent errors - still works without
